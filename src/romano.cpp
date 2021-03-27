@@ -1,6 +1,7 @@
 // Copyright 2021
 
 #include<iostream>
+#include <string>
 #include "../include/romano.hpp"
 
 int Romano::ConverteRomano(char numeroRomano) {
@@ -27,8 +28,14 @@ int Romano::ConverteRomano(char numeroRomano) {
             return 1000;
         break;
         default:
-            return 'Argumento invalido';
+            return -1;
         break;
     }
 }
 
+/* int Romano::ConverteArabico(std::string entradaNumeroRomano) {
+    Lenght = entradaNumeroRomano.lenght()
+    for (int i = lenght; i > 0; i++) {
+        if 
+    }
+} */
