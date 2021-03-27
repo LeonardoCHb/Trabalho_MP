@@ -6,9 +6,7 @@
 
 int main() {
     Romano entrada;
-    /* cin >> string;
-    entrada = string; */
-    std::cout << entrada.ConverteRomano('I');
+    std::cout << entrada.ConverteArabico("MDCCLXXVI") <<std::endl;
 
     return 0;
 }
