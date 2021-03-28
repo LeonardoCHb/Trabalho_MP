@@ -33,10 +33,11 @@ int Romano::ConverteRomano(char numeroRomano) {
     }
 }
 
-int Romano::ConverteArabico(std::string entradaNumeroRomano) {
+int Romano::Converte(std::string entradaNumeroRomano) {
     int Lenght = entradaNumeroRomano.length();
     int final = 0;
-    for (int i = 0; i < Lenght; i++) {
+
+     for (int i = 0; i < Lenght; i++) {
         if (ConverteRomano(entradaNumeroRomano[i]) < ConverteRomano(entradaNumeroRomano[i+1])) {
             final -= ConverteRomano(entradaNumeroRomano[i]);
         } else {
@@ -45,4 +46,25 @@ int Romano::ConverteArabico(std::string entradaNumeroRomano) {
     }
 
     return final;
+}
+
+int Romano::ConverteArabico(std::string entradaNumeroRomano) {
+    int Lenght = entradaNumeroRomano.length();
+    int i;
+    int n1 = 0;
+
+
+    for (i = 0; i < Lenght; i++) {
+        for (int j=i+1; j < Lenght; j++) {
+            if (entradaNumeroRomano[i] != entradaNumeroRomano[j]) {
+                break;
+            }
+            n1++;
+        }
+    }
+    if (n1 > 3) {
+        return -1;
+    }
+
+    return Converte(entradaNumeroRomano);
 }
