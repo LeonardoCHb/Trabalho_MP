@@ -51,19 +51,17 @@ int Romano::Converte(std::string entradaNumeroRomano) {
 int Romano::ConverteArabico(std::string entradaNumeroRomano) {
     int Lenght = entradaNumeroRomano.length();
     int i;
-    int n1 = 0;
-
+    int n1 = 1;
 
     for (i = 0; i < Lenght; i++) {
-        for (int j=i+1; j < Lenght; j++) {
-            if (entradaNumeroRomano[i] != entradaNumeroRomano[j]) {
-                break;
+        if (entradaNumeroRomano[i] == entradaNumeroRomano[i+1]) {
+            n1+=1;
+            if (n1 > 3) {
+            return -1;
             }
-            n1++;
+        } else {
+            n1 = 1;
         }
-    }
-    if (n1 > 3) {
-        return -1;
     }
 
     for (i = 0; i < Lenght; i++) {
@@ -74,5 +72,9 @@ int Romano::ConverteArabico(std::string entradaNumeroRomano) {
         else if ((entradaNumeroRomano[i] == 'D' && entradaNumeroRomano[i+1] == 'D'))
             return -1;
     }
-    return Converte(entradaNumeroRomano);
+    if (Converte(entradaNumeroRomano) >= 3000) {
+        return -1;
+    } else {
+        return Converte(entradaNumeroRomano);
+    }
 }
