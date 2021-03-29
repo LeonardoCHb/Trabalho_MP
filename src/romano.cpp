@@ -66,5 +66,13 @@ int Romano::ConverteArabico(std::string entradaNumeroRomano) {
         return -1;
     }
 
+    for (i = 0; i < Lenght; i++) {
+        if (entradaNumeroRomano[i] == 'V' && entradaNumeroRomano[i+1] == 'V')
+            return -1;
+        else if ((entradaNumeroRomano[i] == 'L' && entradaNumeroRomano[i+1] == 'L'))
+            return -1;
+        else if ((entradaNumeroRomano[i] == 'D' && entradaNumeroRomano[i+1] == 'D'))
+            return -1;
+    }
     return Converte(entradaNumeroRomano);
 }
