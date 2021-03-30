@@ -50,10 +50,9 @@ int Romano::Converte(std::string entradaNumeroRomano) {
 
 int Romano::ConverteArabico(std::string entradaNumeroRomano) {
     int Lenght = entradaNumeroRomano.length();
-    int i;
     int n1 = 1;
 
-    for (i = 0; i < Lenght; i++) {
+    for (int i = 0; i < Lenght; i++) {
         if (entradaNumeroRomano[i] == entradaNumeroRomano[i+1]) {
             n1+=1;
             if (n1 > 3) {
